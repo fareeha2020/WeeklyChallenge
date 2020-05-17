@@ -85,6 +85,7 @@ async function Program() {
             //let titleName=element.title;
 
             if (authorName == stg.toLowerCase()) {
+                console.log();
 
                 return `The Book by ${authorName} is currently available to resreve`;
 
@@ -95,7 +96,7 @@ async function Program() {
 
 
         }
-
+        console.log();
         return `The Book ${stg} is currently Unavailable`;
 
     }
@@ -114,7 +115,8 @@ async function Program() {
 
             let titleName = element.title;
 
-            if (authortitle == stg.toLowerCase()) {
+            if (titleName == stg.toLowerCase()) {
+                console.log();
 
                 return `The Book by ${titleName} is currently available to reserve.`;
 
@@ -125,7 +127,7 @@ async function Program() {
 
 
         }
-
+        console.log();
         return `The Book ${stg} is currently Unavailable`;
 
 
@@ -141,7 +143,7 @@ async function Program() {
     }
 
     while (true) {
-
+        console.log();
         console.log("Welcome to Library console app:");
         console.log();
         console.log("Find a Book to reserve or Return a book");
@@ -190,10 +192,10 @@ async function Program() {
 
             console.log("You have selected to Return your book");
 
-            let userInput1 = await askQuestion("Enter the title");
-            let userInput2 = await askQuestion("Enter the author name: ");
-            books.push({author:userInput1,title:userInput2});//push whole element
-            
+            let userInput1 = await askQuestion("Enter the authorname");
+            let userInput2 = await askQuestion("Enter the title: ");
+            books.push({ author: userInput1,title: userInput2 });//push whole element
+
             console.log();
 
 
