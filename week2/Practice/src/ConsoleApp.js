@@ -51,16 +51,13 @@ async function Program() {
                    case "1":
                        let medicareFirstName = await askQuestion("Enter Medicare First Name: ");
                        let medicareLastName = await askQuestion("Enter Medicare Last Name: ");
-                       let medicareAge = await askQuestion("Enter Medicare Age: ");
-                       let parsedMedicareAge = parseInt(medicareAge);
-                       let grades = await askQuestion("Enter Medicare Grades (Space-Separated): ");
+                       let medAge = await askQuestion("Enter Medicare Age: ");
+                       let parsedMedicareAge = parseInt(medAge);
                        let licenceId = await askQuestion("Enter Licence's ID: ");
-                       let parsedGrades = grades.split(" ").map(num => parseInt(num));
                        let newMedicare = new Medicare(
                            medicareFirstName,
                            medicareLastName,
                            parsedMedicareAge,
-                           parsedGrades,
                            licenceId
                        );
                        _medicareService.addMedicare(newMedicare);
@@ -70,6 +67,31 @@ async function Program() {
                        let matchingMedicares = _medicareService.searchByName(searchTerm);
                        console.log(matchingMedicares);
                        break;
+                       case "3":
+                       let medId = await askQuestion("Enter medicare ID to search: ");
+                      let searchedId= _medicareService.getMedicare(medId);
+                       console.log(searchedId);
+                       break;
+                       case "4":
+                        let medUpdFirstName = await askQuestion("Enter Medicare First Name: ");
+                        let medUpdLastName = await askQuestion("Enter Medicare Last Name: ");
+                        let medUpdAge = await askQuestion("Enter Medicare Age: ");
+                        let parsedMedUpdAge = parseInt(medUpdAge);
+                        let licId = await askQuestion("Enter Licence's ID: ");
+                        let updMedicare = new Medicare(
+                            medUpdFirstName,
+                            medUpdLastName,
+                            parsedMedUpdAge,
+                            licId
+                        );
+                        _medicareService.updateMedicare(updMedicare);
+                        //console.log(_studentData.addStudent(student))
+                        break;
+                        case "5":
+                            let medIdToDelete = await askQuestion("Enter medicare ID to delete: ");
+                           let deletedId= _medicareService.deleteMedicare(medIdToDelete);
+                            console.log(`the medicare deatils of ${medIdToDelete} is deleted`);
+                            break;
                    default:
                        console.log("Going back to main menu");
                }
