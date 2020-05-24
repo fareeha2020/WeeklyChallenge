@@ -11,10 +11,10 @@ if (!fs.existsSync(baseFilePath)) {
     fs.mkdirSync(baseFilePath)//if there is folder inside basefolder dont do any otherwise create one as JSON data
 }
 
-let _studentDataSet = new StudentDataReader(path.join(baseFilePath, "Students.json"));
-let _teacherDataSet = new TeacherDataReader(path.join(baseFilePath, "Teachers.json"));
+let _medicareDataSet = new MedicareDataReader(path.join(baseFilePath, "Medicares.json"));
+let _licenceDataSet = new LicenceDataReader(path.join(baseFilePath, "Licences.json"));
 
-_teacherDataSet.generateRandomTeachers();//generates Random teachers same as person
+_licenceDataSet.generateRandomLicences();//generates Random teachers same as person
 
-let teacherIds = _teacherDataSet.getArrayFromFile().map(teacher => teacher.id);
-_studentDataSet.generateRandomStudents(teacherIds);//generates students Id of havind  teacher ids's
+let licenceIds = _teacherDataSet.getArrayFromFile().map(teacher => teacher.id);
+_medicareDataSet.generateRandomMedicares(licenceIds);//generates students Id of havind  teacher ids's
