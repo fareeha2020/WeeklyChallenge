@@ -1,7 +1,7 @@
 const random = require("../Common/Random");
 const uuid = require("uuid");
 
-class Person {
+class Customer {
     constructor(firstName, lastName, age, id = uuid.v4()) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,4 +28,4 @@ class Person {
     }
 }
 
-module.exports = Person;
+module.exports = Customer;

@@ -1,7 +1,7 @@
-const Person = require("./Person");
-const uuid=require("uuid");
+const Person = require("./Customer");
+const uuid = require("uuid");
 
-class Teacher extends Person {
+class Licence extends Customer {
     constructor(firstName, lastName, age, id = uuid.v4()) {
         super(firstName, lastName, age, id);
     }
@@ -19,7 +19,7 @@ class Teacher extends Person {
         //     ));
         // }
 
-        return super.generateRandomPeople(num).map(person => new Teacher(
+        return super.generateRandomPeople(num).map(person => new Licence(
             person.firstName,
             person.lastName,
             person.age,
@@ -27,9 +27,9 @@ class Teacher extends Person {
         ));
     }
 
-    getMyStudents(students) {
-        return students.filter(student => student.teacherId == this.id);
+    getMyMedicares(medicares) {
+        return medicares.filter(medicare => medicare.licenceId == this.id);
     }
 }
 
-module.exports = Teacher;
+module.exports = Licence;
