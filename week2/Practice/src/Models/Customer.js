@@ -17,7 +17,7 @@ class Customer {
         let randomPeople = [];
         for (let i = 0; i < numberOfPeople; i++) {
             // Generate a random person
-            let randomPerson = new Person(
+            let randomPerson = new Customer(
                 random.getRandomGivenName(),
                 random.getRandomFamilyName(),
                 random.getRandomNumber(42) + 18
