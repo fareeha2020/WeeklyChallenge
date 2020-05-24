@@ -1,4 +1,4 @@
-const Person = require("./Person");
+const Customer = require("./Customer");
 const random = require("../Common/Random");
 const uuid = require("uuid");
 
@@ -18,7 +18,6 @@ class Medicare extends Customer {
             person.firstName,
             person.lastName,
             person.age,
-            this.generateRandomGrades(),
             validIds[random.getRandomNumber(validIds.length)],
             person.id
         ));

@@ -1,4 +1,4 @@
-const Person = require("./Customer");
+const Customer = require("./Customer");
 const uuid = require("uuid");
 
 class Licence extends Customer {
