@@ -1,7 +1,6 @@
 //const DataLayer=require("./DataLayer");
 const {MedicareDataReader,LicenceDataReader}=require("./DataLayer");
-// const StudentDataReader = require("./DataLayer/StudentDataReader");
-// const TeacherDataReader = require("./DataLayer/TeacherDataReader");
+
 const fs = require("fs");
 const path = require("path");
 
