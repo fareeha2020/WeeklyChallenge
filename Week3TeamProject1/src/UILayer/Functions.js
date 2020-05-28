@@ -1,6 +1,4 @@
-//const {countries}=require("../Models/countries");
 const readline = require('readline');
-// convert country codes into an array of just codes
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
