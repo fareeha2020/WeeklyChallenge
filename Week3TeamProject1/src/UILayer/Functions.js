@@ -35,6 +35,7 @@ function doesCurrencyExist(Input,country) {
 }
 
 function calculateRate(detailedResponse, country, amount) {
+    if(!isNaN(amount)){
        for (key in detailedResponse) {
         if (detailedResponse.hasOwnProperty(country)) {
             let value = detailedResponse[country];
@@ -42,6 +43,8 @@ function calculateRate(detailedResponse, country, amount) {
         }
     }
     return myRate * amount;
+}
+return false;
 }
 module.exports={
     listCountryCodesOnly,

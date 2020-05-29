@@ -6,19 +6,19 @@ module.exports = async function mainMenu() {
 console.log("Welcome to Currency Convertor.");
 let shouldLoop = true;
 while (shouldLoop) {
-    console.log("Main Menu");
-    console.log("[1] Show list of Country Codes");
-    console.log("[2] Check what country the code stands for")
-    console.log("[3] Calculate Currency Conversion");
-    console.log("[4] Exit Menu");
+    console.log("                 MAIN MENU             ");
+    console.log("         [1] Display List of Country Codes");
+    console.log("         [2] Check The Country Code ");
+    console.log("         [3] Calculate Currency Conversion");
+    console.log("         [4] Exit Menu");
 
     console.log("Welcome to the Currency Converter")
-    let answer = await askQuestion("Please select an option from above: ")
+    let answer = await askQuestion("Please select an option from above 1-4: ")
     console.log();
     switch (answer)
      {
         case "1":
-            console.log("The codes we offer conversions for are");
+            console.log(".........THE COUNTRY CODES LIST............. ");
             console.table(listCountryCodesOnly(countries));
             break;
         case "2":
@@ -28,7 +28,8 @@ while (shouldLoop) {
                 console.log(`The code you entered ${currencyCodeCaps} stands for ${countryName(currencyCode, countries)}`)
                 console.log();
             } else {
-                console.log("The code you entered was not valid")
+                console.log("########...ERROR:One of the codes you entered was not valid....#########");
+                Console.log();
                 break;
             }
             break;
@@ -41,13 +42,18 @@ while (shouldLoop) {
                 let website = await axios.get(`https://api.exchangeratesapi.io/latest?base=${baseForWebsite}&symbol=${countryForWebsite}`);
                 let amountString = await askQuestion("How much money would you like to convert: $");
                 let amount = parseFloat(amountString);
+                if(!isNaN(amount)){
                 console.log();
                 let detailedResponse = website.data.rates;
                 console.log(`$${amount} in ${base.toUpperCase()} equals $${Math.round(calculateRate(detailedResponse, country.toUpperCase(), amount))} in ${country.toUpperCase()}`);
-                console.log();
+                console.log();}
+                else if(isNaN(amount)){
+                    console.log("########......ERROR:Please enter a valid amount in numbers...#########");
+                    break
+                }
                 break;
             } else {
-                console.log("One of the codes you entered was not valid")
+                console.log("##########....ERROR:One of the codes you entered was not valid....#########")
                 break;
             }
         case "4":
