@@ -45,7 +45,7 @@ while (shouldLoop) {
                 if(!isNaN(amount)){
                 console.log();
                 let detailedResponse = website.data.rates;
-                console.log(`$${amount} in ${base.toUpperCase()} equals $${Math.round(calculateRate(detailedResponse, country.toUpperCase(), amount))} in ${country.toUpperCase()}`);
+                console.log(`$${amount} in  ${base.toUpperCase()} (${countryName(baseForWebsite, countries)}) equals $${Math.round(calculateRate(detailedResponse, country.toUpperCase(), amount))} in ${country.toUpperCase()}(${countryName(countryForWebsite, countries)})`);
                 console.log();}
                 else if(isNaN(amount)){
                     console.log("########......ERROR:Please enter a valid amount in numbers...#########");
@@ -66,7 +66,6 @@ while (shouldLoop) {
 }
 console.log("Thank you for using Currency Convertor APP.");
 }
-
 
 
 
