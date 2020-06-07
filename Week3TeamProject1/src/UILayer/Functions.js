@@ -22,9 +22,6 @@ function countryName(userInput, countries) {
     let newCountries = countries.find(countryObject => userInput.toUpperCase() == countryObject.code)
     return newCountries.countryName;
 }
-
-
-
 function doesCurrencyExist(Input,country) {
     let currency =listCountryCodesOnly(country).includes(Input);
     if (currency) {
@@ -33,7 +30,6 @@ function doesCurrencyExist(Input,country) {
         return false;
     }
 }
-
 function calculateRate(detailedResponse, country, amount) {
     if(!isNaN(amount)){
        for (key in detailedResponse) {
