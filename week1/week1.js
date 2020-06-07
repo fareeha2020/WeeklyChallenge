@@ -37,7 +37,7 @@ async function Program() {
             //let titleName=element.title;
             if (authorName == stg.toLowerCase()) {
                 console.log();
-                return `The Book by ${authorName} is currently available to resreve`;
+                return `The Book by ${authorName} is currently available to reserve`;
                 break;
             }
         }
@@ -89,10 +89,13 @@ async function Program() {
             console.log("You have selected to Return your book");
             let userInput1 = await askQuestion("Enter the authorname");
             let userInput2 = await askQuestion("Enter the title: ");
-            books.push({ author: userInput1, title: userInput2 });//push whole element
+            let userInput3 = userInput1.toLowerCase();
+            let userInput4 = userInput2.toLowerCase();
+            books.push({ author: userInput3, title: userInput4 });//push whole element
+            console.log(`The author ${userInput1} and The title ${userInput2} is added to Library Console`);
             console.log();
         } else if (ans == "4") {
-            console.log("Thank you for using this Library console app");
+            console.log("Thank you for using this Library Console App");
             break;
         } else {
             console.log("Sorry, we couldn't understand your input. Please enter a number from 1 - 4");
