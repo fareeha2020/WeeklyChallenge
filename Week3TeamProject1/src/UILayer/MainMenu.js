@@ -29,7 +29,7 @@ while (shouldLoop) {
                 console.log();
             } else {
                 console.log("########...ERROR:One of the codes you entered was not valid....#########");
-                Console.log();
+               // Console.log();
                 break;
             }
             break;
